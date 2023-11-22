@@ -14,25 +14,7 @@ class WelcomeScreen extends StatelessWidget {
       child: SingleChildScrollView(
         child: SafeArea(
           child: Responsive(
-            desktop: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: WelcomeImage(),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 450,
-                        child: LoginAndSignupBtn(),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            desktop: Desktop(),
             mobile: MobileWelcomeScreen(),
           ),
         ),
@@ -41,6 +23,7 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
+// Welecome Mobile Screen
 class MobileWelcomeScreen extends StatelessWidget {
   const MobileWelcomeScreen({
     Key? key,
@@ -61,6 +44,34 @@ class MobileWelcomeScreen extends StatelessWidget {
             ),
             Spacer(),
           ],
+        ),
+      ],
+    );
+  }
+}
+
+// Welecome Desktop screen
+class Desktop extends StatelessWidget {
+  const Desktop({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Expanded(
+          child: WelcomeImage(),
+        ),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 450,
+                child: LoginAndSignupBtn(),
+              ),
+            ],
+          ),
         ),
       ],
     );
