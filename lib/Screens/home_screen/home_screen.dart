@@ -32,13 +32,13 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: size.width * 0.2,
+                        height: size.width * 0.13,
                         width: double.infinity,
                         color: Color.fromARGB(133, 155, 155, 143),
                       ),
                       Positioned(
                         left: size.width * 0.1,
-                        top: size.width * 0.15,
+                        top: size.width * 0.1,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
