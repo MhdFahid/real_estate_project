@@ -10,7 +10,7 @@ class ContentCenter extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.20,
-      width: size.width > 700 ? size.width * 0.15 : size.width * 0.5,
+      width: size.width > 650 ? size.width * 0.15 : size.width * 0.5,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8), gradient: gradient),
       child: Column(
