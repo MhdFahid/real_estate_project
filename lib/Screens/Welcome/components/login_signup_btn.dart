@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Tabscreen/tabscreen.dart';
 
 import '../../../constants.dart';
 
-import '../../Login/login_screen.dart';
 import '../../Signup/signup_screen.dart';
 
 class LoginAndSignupBtn extends StatelessWidget {
