@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Tabscreen/widgets/tab_menu_icon.dart';
+import 'package:flutter_auth/Screens/home_screen/widgets/tab_menu_icon.dart';
 import 'package:flutter_auth/constants.dart';
 
 class DrewerHome extends StatelessWidget {
