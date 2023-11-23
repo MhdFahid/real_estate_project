@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Tabscreen/tabscreen.dart';
+import 'package:flutter_auth/Screens/Tabscreen/home_screen.dart';
 import 'package:flutter_auth/constants.dart';
 
 import '../../../components/already_have_an_account_acheck.dart';
