@@ -9,11 +9,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: size.width < 650
-          ? AppBar(
-              leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
-            )
-          : null,
       body: Row(
         children: [
           size.width > 650 ? const DrewerHome() : const SizedBox(),
@@ -63,6 +58,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 )
+              //  mobile screeen
               : Expanded(
                   child: SingleChildScrollView(
                     child: Column(
@@ -86,17 +82,18 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
+                                  SizedBox(height: size.width * 0.08),
                                   const ContentCenter(
                                       title: 'Produts', icon: Icons.ac_unit),
-                                  SizedBox(width: size.width * 0.08),
+                                  SizedBox(height: size.width * 0.08),
                                   const ContentCenter(
                                       title: 'Users',
                                       icon: Icons.supervised_user_circle),
-                                  SizedBox(width: size.width * 0.08),
+                                  SizedBox(height: size.width * 0.08),
                                   const ContentCenter(
                                       title: 'Order',
                                       icon: Icons.online_prediction_rounded),
-                                  SizedBox(width: size.width * 0.08),
+                                  SizedBox(height: size.width * 0.08),
                                 ],
                               ),
                             )
