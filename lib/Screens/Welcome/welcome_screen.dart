@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../components/background.dart';
 import '../../responsive.dart';
 import 'components/login_signup_btn.dart';
 import 'components/welcome_image.dart';
@@ -10,13 +9,15 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Background(
-      child: SingleChildScrollView(
-        child: SafeArea(
-          child: Responsive(
-            desktop: Desktop(),
-            mobile: MobileWelcomeScreen(),
-          ),
+    final sSize = MediaQuery.of(context).size;
+    return Scaffold(
+      drawer: Drawer(
+        child: Text('data'),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child:
+              sSize.width > 920 ? const Desktop() : const MobileWelcomeScreen(),
         ),
       ),
     );
@@ -58,6 +59,7 @@ class Desktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
           child: WelcomeImage(),

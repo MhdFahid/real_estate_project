@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Tabscreen/tabscreen.dart';
 
 import '../../../constants.dart';
 
@@ -15,16 +16,7 @@ class LoginAndSignupBtn extends StatelessWidget {
     return Column(
       children: [
         ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return const LoginScreen();
-                },
-              ),
-            );
-          },
+          onPressed: () {},
           child: Text(
             "Login".toUpperCase(),
           ),
