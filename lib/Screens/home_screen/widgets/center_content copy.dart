@@ -44,7 +44,7 @@ class ContentCenter extends StatelessWidget {
                 ),
                 const Text(
                   '5',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 30, color: Colors.white),
                 )
               ],
             ),

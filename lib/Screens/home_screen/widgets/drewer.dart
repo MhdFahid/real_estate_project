@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/home_screen/widgets/tab_menu_icon.dart';
 import 'package:flutter_auth/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DrewerHome extends StatelessWidget {
   const DrewerHome({super.key});
@@ -10,8 +11,8 @@ class DrewerHome extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       height: size.height,
-      width: size.width * 0.2,
-      decoration: const BoxDecoration(gradient: gradient),
+      width: size.width * 0.17,
+      decoration: const BoxDecoration(color: Color(0xff062925)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -21,43 +22,53 @@ class DrewerHome extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(12.0),
             child: Row(children: [
+              SizedBox(
+                width: 10,
+              ),
               Text(
-                'Details',
-                style: TextStyle(
+                'DashBoard',
+                style: GoogleFonts.poppins(
                     color: Colors.white,
-                    fontSize: size.width * 0.015,
-                    fontWeight: FontWeight.w600),
+                    // fontSize: size.width * 0.015,
+                    fontWeight: FontWeight.w500),
               ),
               Spacer(),
             ]),
           ),
           CircleAvatar(
             radius: size.width * 0.049,
-            backgroundColor: const Color.fromARGB(98, 184, 48, 48),
+            backgroundImage: NetworkImage(
+                "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
           ),
-          const Text('Admin name'),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'Admin name',
+            style: GoogleFonts.poppins(color: Colors.white),
+          ),
           const SizedBox(
             height: 20,
           ),
           const TabMenuIcon(
-            title: 'HOME ',
-            icon: Icons.home_outlined,
+            title: 'Home',
+            icon: Icons.home_filled,
           ),
           const TabMenuIcon(
-            title: 'Users',
-            icon: Icons.verified_user_sharp,
+            title: 'Search',
+            icon: Icons.search_rounded,
           ),
           const TabMenuIcon(
-            title: 'Product',
-            icon: Icons.production_quantity_limits,
+            title: 'Requests',
+            icon: Icons.real_estate_agent_sharp,
           ),
           const TabMenuIcon(
-            title: 'Orders',
-            icon: Icons.border_outer_outlined,
+            title: 'Profile',
+            icon: Icons.person,
           ),
           const TabMenuIcon(
-            title: 'Account',
-            icon: Icons.account_box,
+            title: 'Settings',
+            icon: Icons.settings,
           ),
         ],
       ),

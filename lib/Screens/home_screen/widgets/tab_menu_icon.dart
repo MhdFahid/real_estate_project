@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TabMenuIcon extends StatelessWidget {
   const TabMenuIcon({super.key, required this.title, required this.icon});
@@ -16,13 +17,13 @@ class TabMenuIcon extends StatelessWidget {
             icon: Icon(
               icon,
               color: Colors.white,
-              size: size.width * 0.03,
+              size: size.width * 0.02,
             ),
             label: Padding(
               padding: const EdgeInsets.all(.0),
               child: Text(
                 title,
-                style: const TextStyle(color: Colors.white),
+                style: GoogleFonts.poppins(color: Colors.white),
               ),
             ),
           ),
