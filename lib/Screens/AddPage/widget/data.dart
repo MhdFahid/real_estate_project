@@ -123,7 +123,6 @@ RxList<String> labourAccommodation = [
 RxList<String> residentialLand = [
   'Zone',
   'Land area',
-  'Built up area',
   'Number of street',
   'Number of floors',
   'Number of rooms',
