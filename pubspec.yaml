@@ -25,7 +25,8 @@ dependencies:
   cupertino_icons: ^1.0.5
   flutter_svg: ^1.1.0
   google_fonts: 
-
+  get:
+  multi_image_picker:
 dev_dependencies:
   flutter_test:
     sdk: flutter

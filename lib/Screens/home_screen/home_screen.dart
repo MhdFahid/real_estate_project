@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/home_screen/widgets/center_content.dart';
-import 'package:flutter_auth/Screens/home_screen/widgets/drewer.dart';
+import 'package:flutter_auth/Screens/Home_screen/widgets/center_content.dart';
+import 'package:flutter_auth/Screens/Home_screen/widgets/drewer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
