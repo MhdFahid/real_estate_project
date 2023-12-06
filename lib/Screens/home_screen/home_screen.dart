@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/home_screen/widgets/center_content.dart';
 import 'package:flutter_auth/Screens/home_screen/widgets/drewer.dart';
+import 'package:flutter_auth/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,6 +37,19 @@ class HomeScreen extends StatelessWidget {
                                     color: Colors.white),
                               ),
                               const Spacer(),
+                              isAdmin?
+                              Text(
+                                "Welcome , Admin",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 18, color: Colors.white),
+                              ): Text(
+                                "Welcome , user",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
                               IconButton(
                                 onPressed: () {},
                                 icon: const Icon(
@@ -88,12 +102,12 @@ class HomeScreen extends StatelessWidget {
                                     color: Color(0xff630a10),
                                   ),
                                   SizedBox(width: size.width * 0.08),
-                                  const ContentCenter(
+                                  isAdmin? ContentCenter(
                                     title: 'All Users',
                                     count: "22",
                                     icon: Icons.supervised_user_circle,
                                     color: Color(0xff062925),
-                                  ),
+                                  ):SizedBox(),
                                   SizedBox(width: size.width * 0.08),
                                   const ContentCenter(
                                     title: 'Drafts',

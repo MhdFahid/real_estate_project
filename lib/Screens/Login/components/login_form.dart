@@ -9,16 +9,25 @@ import '../../../components/already_have_an_account_acheck.dart';
 
 import '../../Signup/signup_screen.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   LoginForm({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
   TextEditingController emailController = TextEditingController();
+
   TextEditingController passwordController = TextEditingController();
 
   LoginFormcontroller loginformcontroller = Get.put(LoginFormcontroller());
+
   final _formKey = GlobalKey<FormState>();
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -93,11 +102,15 @@ class LoginForm extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
+                  isLoading = true;
+                  setState(() {});
                   String message = await Authentication()
                       .signIn(emailController.text, passwordController.text);
+                  isLoading = false;
+                  setState(() {});
                   if (message == "invalid-login-credentials") {
                     AnimatedSnackBar.rectangle(
-                      'Incorrect Password',
+                      'Incorrect Password or Email',
                       'password entered is wrong!!!',
                       type: AnimatedSnackBarType.error,
                       brightness: Brightness.light,
@@ -108,25 +121,39 @@ class LoginForm extends StatelessWidget {
                       context,
                     );
                   } else {
-                    
-                    AnimatedSnackBar.rectangle(
-                            'Success', 'Login successfull, welcome Admin!!',
-                            type: AnimatedSnackBarType.success,
-                            brightness: Brightness.light,
-                            mobileSnackBarPosition: MobileSnackBarPosition.bottom,
-
-
-                            desktopSnackBarPosition:
-                                DesktopSnackBarPosition.bottomRight)
-                        .show(
-                      context,
-                    );
+                    isAdmin
+                        ? AnimatedSnackBar.rectangle(
+                                'Success', 'Login successfull, welcome Admin!!',
+                                type: AnimatedSnackBarType.success,
+                                brightness: Brightness.light,
+                                mobileSnackBarPosition:
+                                    MobileSnackBarPosition.bottom,
+                                desktopSnackBarPosition:
+                                    DesktopSnackBarPosition.bottomRight)
+                            .show(
+                            context,
+                          )
+                        : AnimatedSnackBar.rectangle(
+                                'Success', 'Login successfull, welcome user!!',
+                                type: AnimatedSnackBarType.success,
+                                brightness: Brightness.light,
+                                mobileSnackBarPosition:
+                                    MobileSnackBarPosition.bottom,
+                                desktopSnackBarPosition:
+                                    DesktopSnackBarPosition.bottomRight)
+                            .show(
+                            context,
+                          );
                   }
                 }
               },
-              child: Text(
-                "Login".toUpperCase(),
-              ),
+              child: isLoading
+                  ? CircularProgressIndicator(
+                      color: Colors.white,
+                    )
+                  : Text(
+                      "Login".toUpperCase(),
+                    ),
             ),
             const SizedBox(height: defaultPadding),
             AlreadyHaveAnAccountCheck(

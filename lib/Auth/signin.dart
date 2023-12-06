@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_auth/Screens/home_screen/home_screen.dart';
+import 'package:flutter_auth/constants.dart';
 import 'package:get/get.dart';
 
 class Authentication {
@@ -19,9 +20,17 @@ class Authentication {
         print(value);
         if (value.user!.email == "aldarappqatar@gmail.com" &&
             value.user != null) {
+          message = "success";
           Get.to(HomeScreen());
+        } else if (value.user!.email == "aldaruser@gmail.com"
+           ) {
+          isAdmin = false;
+          message = "success";
+          Get.to(HomeScreen());
+        } else {
+          message = "invalid-login-credentials";
         }
-        message = "success";
+
         return message;
       });
     } on FirebaseAuthException catch (e) {

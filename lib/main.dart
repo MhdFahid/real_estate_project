@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
             ),
           )),
       // home: const LoginScreen(),
-        home: const HomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }

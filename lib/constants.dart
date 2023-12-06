@@ -9,3 +9,4 @@ const LinearGradient gradient = LinearGradient(
   end: Alignment.topRight,
   colors: [Color.fromARGB(218, 6, 143, 27), Color.fromARGB(184, 12, 161, 57)],
 );
+bool isAdmin = true;

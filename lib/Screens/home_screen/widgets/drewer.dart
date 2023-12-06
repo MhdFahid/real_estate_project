@@ -43,10 +43,15 @@ class DrewerHome extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
-            'Admin name',
-            style: GoogleFonts.poppins(color: Colors.white),
-          ),
+          isAdmin
+              ? Text(
+                  'Nasir Mohammed',
+                  style: GoogleFonts.poppins(color: Colors.white),
+                )
+              : Text(
+                  'Ahmed',
+                  style: GoogleFonts.poppins(color: Colors.white),
+                ),
           const SizedBox(
             height: 20,
           ),
@@ -58,10 +63,24 @@ class DrewerHome extends StatelessWidget {
             title: 'Search',
             icon: Icons.search_rounded,
           ),
-          const TabMenuIcon(
-            title: 'Requests',
-            icon: Icons.real_estate_agent_sharp,
-          ),
+          isAdmin
+              ? TabMenuIcon(
+                  title: 'Requests',
+                  icon: Icons.real_estate_agent_sharp,
+                )
+              : TabMenuIcon(
+                  title: 'status',
+                  icon: Icons.real_estate_agent_sharp,
+                ),
+          isAdmin
+              ? TabMenuIcon(
+                  title: 'Add User',
+                  icon: Icons.person_add_rounded,
+                )
+              : TabMenuIcon(
+                  title: 'Add Property',
+                  icon: Icons.real_estate_agent_outlined,
+                ),
           const TabMenuIcon(
             title: 'Profile',
             icon: Icons.person,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/home_screen/widgets/drewer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserScreen extends StatelessWidget {
@@ -6,21 +7,16 @@ class UserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text("Users",style: GoogleFonts.poppins(fontSize: 18,fontWeight: FontWeight.bold),),
-                Expanded(child: Container()),
-                ElevatedButton.icon(onPressed: (){},icon: ,)
-              ],
-            )
-            
-          ],
-        ),
+      body: Row(
+        children: [
+          size.width > 650 ? const DrewerHome() : const SizedBox(),
+
+          Text("Users",style: GoogleFonts.poppins(fontSize: 18,fontWeight: FontWeight.bold),),
+          Expanded(child: Container()),
+          ElevatedButton.icon(onPressed: (){},icon:Icon(Icons.add) ,label:  Text("Add User"),)
+        ],
       ),
     );
   }
