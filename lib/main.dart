@@ -23,6 +23,10 @@ void main() async {
   runApp(const MyApp());
 }
 
+class DropdownController extends GetxController {
+  var selectedItem = ''.obs;
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 

@@ -29,8 +29,13 @@ dependencies:
   animated_snack_bar: ^0.4.0
   get: any
   google_fonts: 
+<<<<<<< HEAD
   animated_text_kit: ^4.2.2
 
+=======
+  get:
+  multi_image_picker:
+>>>>>>> 0e25cbe60f8c2ffd7be4a4fecc4451f0c34adc44
 dev_dependencies:
   flutter_test:
     sdk: flutter
